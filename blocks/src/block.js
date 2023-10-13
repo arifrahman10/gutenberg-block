@@ -1,32 +1,49 @@
-const {registerBlockType} = wp.blocks;
-const {TextControl} = wp.components;
-const {__} = wp.i18n;
+const { registerBlockType } = wp.blocks;
+const { TextControl, Button } = wp.components;
+const { __ } = wp.i18n;
 
+import { registerBlockType } from '@wordpress/blocks';
 
-registerBlockType('gutenberg/blocks', {
-    title: __('My Gutenberg Block', 'gutenberg-block'),
-    icon: 'smiley',
-    category: 'custom',
+registerBlockType('gutenberg-block/testimonial', {
+    title: __('Testimonial 01', 'gutenberg-block'),
+    icon: 'format-quote',
+    category: 'common',
     attributes: {
-        content: {
+        text: {
             type: 'string',
-            default: 'Hello, Gutenberg!',
+            default: '',
+        },
+        author: {
+            type: 'string',
+            default: '',
         },
     },
     edit: function (props) {
-        const {attributes, setAttributes} = props;
+        const { attributes, setAttributes } = props;
 
         return (
             <div>
                 <TextControl
-                    label={__('Content', 'gutenberg-block')}
-                    value={attributes.content}
-                    onChange={(newContent) => setAttributes({content: newContent})}
+                    label={__('Testimonial Text', 'gutenberg-block')}
+                    value={attributes.text}
+                    onChange={(text) => setAttributes({ text })}
                 />
+                <TextControl
+                    label={__('Author', 'gutenberg-block')}
+                    value={attributes.author}
+                    onChange={(author) => setAttributes({ author })}
+                />
+                <Button>{__('Save Testimonial', 'gutenberg-block')}</Button>
             </div>
         );
     },
-    save: function () {
-        return null; // Block content is saved on the server side.
+    save: function (props) {
+        const { attributes } = props;
+        return (
+            <div className="testimonial">
+                <blockquote>{attributes.text}</blockquote>
+                <cite>{attributes.author}</cite>
+            </div>
+        );
     },
 });
