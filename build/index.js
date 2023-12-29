@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=window.React;(0,window.wp.blocks.registerBlockType)("gutenberg-examples/example-01-basic-esnext",{edit:function(){return(0,e.createElement)("p",null," Hello world (from the editor)")},save:function(){return(0,e.createElement)("p",null," Hola mundo (from the frontend) ")}})})();
