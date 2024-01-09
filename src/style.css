@@ -1,0 +1,6 @@
+/* red background */
+.wp-block-gutenberg-blocks-hello-world {
+    background: indianred;
+    color: white;
+    padding: 20px;
+}

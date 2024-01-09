@@ -1,8 +1,10 @@
 {
   "apiVersion": 3,
-  "title": "Example: Basic (ESNext)",
-  "name": "gutenberg-examples/example-01-basic-esnext",
-  "category": "layout",
+  "name": "gutenberg-blocks/hello-world",
+  "title": "Example: Hello World",
   "icon": "universal-access-alt",
-  "editorScript": "file:./build/index.js"
+  "category": "gutenberg-block-category",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./src/editor.css",
+  "style": "file:./src/style.css"
 }

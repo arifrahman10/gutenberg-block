@@ -1,0 +1,6 @@
+/* green background */
+.wp-block-gutenberg-blocks-hello-world {
+    background: #090;
+    color: white;
+    padding: 20px;
+}
